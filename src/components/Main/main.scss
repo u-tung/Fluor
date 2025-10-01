@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+
+    gap: 0.8rem;
+    padding: 0.8rem;
+
+    height: 100vh;
+    width: 100vw;
+    background: rgb(57, 57, 57);
+
+    color: white;
+}
+
+.view {
+    height: 100%;
+    flex: 8.8 0;
+    background: rgba(0, 0, 0, 0.33);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    overflow: auto;
+}
+
+.geo-background {
+    background: left / 800px url('/src/assets/19742.png'), rgb(40, 40, 40);
+    background-blend-mode: multiply;
+}
+
+.sidebar {
+    @extend .geo-background;
+    height: 100%;
+    flex: 1.2 0 content;
+}
+
+.venue {
+    @extend .geo-background;
+    position: relative;
+    height: 1000%;
+    width: 1000%;
+}

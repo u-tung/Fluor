@@ -1,0 +1,123 @@
+.component {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.66);
+
+    min-width: 10em;
+    min-height: 5em;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+
+    color: rgb(230, 230, 230);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    --border-radius: 0.25rem;
+    &, & > * {
+        border-radius: var(--border-radius);
+    }
+
+    .header {
+        position: relative;
+        background: rgb(8, 58, 75);
+        padding: 0.2em 1em;
+
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.85);
+
+        cursor: grab;
+        text-align: center;
+
+        &:active {
+            cursor: grabbing;
+        }
+
+        .title {
+            font-weight: 400;
+            flex-grow: 1;
+        }
+
+        .closing-icon {
+            position: absolute;
+            right: 1px;
+            top: 0px;
+            font-size: 0.8em;
+            cursor: default;
+            color: #819196;
+        }
+    }
+
+    .slot {
+        display: flex;
+        align-items: center;
+        padding: 0px 6px;
+        gap: 6px;
+
+        .dot {
+            display: inline-block;
+
+            --size: 0.8em;
+            height: var(--size);
+            width: var(--size);
+
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 0.1em inset rgb(90, 90, 90);
+            background: rgb(180, 180, 180);
+            background-clip: content-box;
+            padding: 0.2em;
+        }
+
+        .color-shower {
+            flex-grow: 1;
+            align-self: stretch;
+
+            border-radius: 0.2rem;
+            padding: 1px;
+
+            background-clip: content-box;
+            background-color: transparent;
+
+            transition: background 0.4s;
+        }
+
+        .color-slider {
+            flex-grow: 1;
+            align-self: stretch;
+            padding: 1px;
+
+            width: 0px;
+            border-radius: 0.2rem;
+            border: 1px solid rgb(60, 60, 60);
+
+            background-clip: content-box;
+            background-color: transparent;
+
+            transition: background 0.1s;
+            appearance: none;
+
+            &::-webkit-slider-thumb {
+                appearance: none;
+                width: 0px;
+                height: 0px;
+            }
+        }
+    }
+
+    .body {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 0.33em;
+
+        padding: 6px 0px 6px 0px;
+        background: rgb(32, 32, 32);
+
+        cursor: default;
+    }
+}
